@@ -19,7 +19,6 @@ class Listener {
         targetEmail,
         JSON.stringify(playlistSongs)
       );
-      console.log(message.content.toString());
       console.log(result);
     } catch (error) {
       console.error(error);

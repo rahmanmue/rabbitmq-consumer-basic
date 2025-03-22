@@ -1,5 +1,5 @@
 const mapDBPlaylistSongsToModel = (rows) => {
-  const { playlistid, name } = rows[0];
+  const { id, name } = rows[0];
 
   const songs = rows
     .filter(({ title }) => title !== null)
@@ -9,7 +9,11 @@ const mapDBPlaylistSongsToModel = (rows) => {
       performer,
     }));
 
-  return { id: playlistid, name, songs };
+  const playlist = {
+    playlist: { id, name, songs },
+  };
+
+  return playlist;
 };
 
 module.exports = mapDBPlaylistSongsToModel;
